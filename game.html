@@ -9,11 +9,12 @@
     <button onclick="playGame('rock');">Rock</button>
     <button onclick="playGame('paper');">Paper</button>
     <button onclick="playGame('scissors');">Scissors</button>
-    
+
     <button onclick="
       score.wins = 0;
       score.losses = 0;
       score.ties = 0;
+      alert(`Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
     ">Reset Score</button>
 
     
@@ -65,6 +66,10 @@
         } else if (result === 'Tie') {
           score.ties = score.ties + 1;
         }
+
+        localStorage.setItem('score', 'aaaa');
+        const test = localStorage.getItem('score');
+        console.log(test);
 
         alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
           Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
