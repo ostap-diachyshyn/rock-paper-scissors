@@ -19,7 +19,7 @@
 
     
     <script>
-      const score = {
+      const score = JSON.parse(localStorage.getItem('score')) || {
         wins: 0,
         losses: 0,
         ties: 0
@@ -67,7 +67,7 @@
           score.ties = score.ties + 1;
         }
 
-        localStorage.setItem('score', 'aaaa');
+        localStorage.setItem('score', JSON.stringify(score));
         const test = localStorage.getItem('score');
         console.log(test);
 
