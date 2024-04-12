@@ -17,6 +17,10 @@
       alert(`Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
     ">Reset Score</button>
 
+    <p class="result"></p>
+    <p class="move"></p>
+    <p class="score"></p>
+
     
     <script>
       const score = JSON.parse(localStorage.getItem('score')) || {
@@ -68,11 +72,16 @@
         }
 
         localStorage.setItem('score', JSON.stringify(score));
-        const test = localStorage.getItem('score');
-        console.log(test);
 
+        /*
         alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
           Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+    
+        */
+
+        document.querySelector('.result').innerHTML = `You picked ${playerMove}.`;
+        document.querySelector('.move').innerHTML = `Computer picked ${computerMove}`;
+        document.querySelector('.score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
       }
 
       function pickComputerMove() {
