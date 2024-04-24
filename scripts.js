@@ -59,8 +59,12 @@ function playGame(playerMove) {
   */
 
   resultTxt.innerHTML = result;
+
   moveTxt.innerHTML = `You picked ${playerMove} - Computer picked ${computerMove}`;
+
   updateScore();
+
+  moveTxt.innerHTML = `You <img src="images/${playerMove}-emoji.png" class="move-icon">`;
 }
 
 function updateScore() {
